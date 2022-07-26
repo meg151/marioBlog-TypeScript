@@ -4,7 +4,8 @@ import { useQuery } from 'react-query';
 
 const Home = () => {
     const {data:blogs, error, isError, isLoading}:any = useQuery('blogs', fetchBlogs)
-
+    console.log(blogs);
+    
     if(isLoading){
         return <div>Loading...</div>
     }
