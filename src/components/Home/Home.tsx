@@ -1,5 +1,5 @@
 import BlogList from 'components/BlogList/BlogList';
-import fetchBlogs from 'components/utility/fetchBlogs';
+import fetchBlogs from 'components/utils/fetchBlogs';
 import { useQuery } from 'react-query';
 
 const Home = () => {
