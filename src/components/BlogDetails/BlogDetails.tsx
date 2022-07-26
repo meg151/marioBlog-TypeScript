@@ -1,7 +1,5 @@
 import { useQuery } from 'react-query';
-import FetchBlogsId from 'components/Server/FetcherId';
-
-
+import FetchBlogsId from 'components/Server/FetchBlogsId';
 
 
 const BlogDetails = () => {
