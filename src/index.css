@@ -72,6 +72,10 @@
   cursor: pointer;
 }
 
+.edit{
+  margin-left: 10px;
+}
+
 /* create new blog form */
 .create {
   max-width: 400px;

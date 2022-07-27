@@ -1,9 +1,20 @@
 import BlogList from 'components/BlogList/BlogList';
 import fetchBlogs from 'components/utils/fetchBlogs';
 import { useQuery } from 'react-query';
+import {BlogInterface} from 'components/BlogDetails/BlogDetails'
+
+interface FetchBlogsInterface{
+    data?: BlogInterface[];
+    // blog?: any;
+    error: any;
+    isError: any;
+    isLoading: any;
+}
+
+
 
 const Home = () => {
-    const {data:blogs, error, isError, isLoading}:any = useQuery('blogs', fetchBlogs)
+    const {data:blogs, error, isError, isLoading}:FetchBlogsInterface= useQuery('blogs', fetchBlogs)
     console.log(blogs);
     
     if(isLoading){
