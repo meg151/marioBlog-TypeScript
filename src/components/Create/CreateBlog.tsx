@@ -1,12 +1,16 @@
 import  {useState} from "react";
 import axios from 'axios';
 import { useMutation } from 'react-query';
+import { useHistory } from 'react-router-dom';
+import { CreateStyle } from 'styles/Global/CreateStyle.styled';
 
 
-const Create = () => {
+const CreateBlog = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
+
+    let history = useHistory();
 
     const mutateBlog = useMutation(
         () => 
@@ -18,7 +22,9 @@ const Create = () => {
                  'Content-Type': 'application/json' 
                 },
         }
-                ),
+                ).then(()=>{
+                    history.push('/')
+                }),
     {
         onSuccess: () => {
             setTitle("");
@@ -29,7 +35,7 @@ const Create = () => {
 );
 
 return(
-   <div className="create">
+   <CreateStyle>
     <h2>Add a New Blog</h2>
     <form 
     onSubmit={(e) => {
@@ -56,8 +62,8 @@ return(
   </select>
   <button>Add Blog</button>
     </form>
-   </div>
+   </CreateStyle>
 );
    };
 
-export default Create;
+export default CreateBlog;

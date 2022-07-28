@@ -1,13 +1,16 @@
 import Navbar from 'components/Navbar/Navbar';
 import Home from 'components/Home/Home';
-import Create from 'components/Create/Create';
+import CreateBlog from 'components/Create/CreateBlog';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BlogDetails from 'components/BlogDetails/BlogDetails';
-
-
+import GlobalStyles from 'styles/Global/Global';
+import { Nav } from 'styles/Global/Navbar.styled';
 
 function App() {
   return (
+    <>
+    <GlobalStyles />
+ 
     <Router>
       <div className="App">
         <Navbar />
@@ -17,7 +20,7 @@ function App() {
           <Home/>
             </Route>
             <Route path="/create">
-            <Create />
+            <CreateBlog />
             </Route>
             <Route path="/blogs/:id">
               <BlogDetails />
@@ -26,6 +29,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </>
   );
 }
 

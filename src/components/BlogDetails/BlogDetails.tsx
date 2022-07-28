@@ -1,7 +1,8 @@
-import { useMutation, useQuery } from 'react-query';
+import { useQuery } from 'react-query';
 import fetchBlogById from 'components/utils/fetchBlogById';
-import  {useParams } from 'react-router-dom';
+import  {useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { BlogDetail } from 'styles/Global/BlogDetail.styled';
 
 export interface ParamsInterface{
     id: string;
@@ -23,19 +24,19 @@ export interface UseQueryInterface{
     isLoading: any;
 }
 
-
-
 const BlogDetails = () => {
-    const { id }:ParamsInterface = useParams();
     
+    const { id }:ParamsInterface = useParams();
+    let history = useHistory();
     const {data:blog, error, isError, isLoading }:UseQueryInterface= useQuery('blog', async() => {
         const blog = await fetchBlogById(id);
         return blog;
     })
 
-    const deleteHandler = () => axios.delete('http://localhost:8000/blogs/'+ id)
-
-    
+    const deleteHandler = () => axios.delete('http://localhost:8000/blogs/'+ id).then(()=> {
+        history.push('/');
+    })
+            
     const updateHandler = async() => {
         const title = prompt(blog?.title)
         const author = prompt(blog?.author)
@@ -53,15 +54,15 @@ const BlogDetails = () => {
 
 
         return (
-            <div className="blog-details" >                    
+            <BlogDetail >                    
                     <article>
                         <h2>{blog?.title}</h2>
                         <p>written by {blog?.author}</p>
                         <div>{blog?.body}</div>
                         <button onClick={deleteHandler}>delete</button>
-                        <button className="edit" onClick={updateHandler}>edit</button>
+                        <button onClick={updateHandler}>edit</button>
                     </article>
-            </div>
+            </BlogDetail>
         )
     }
     
