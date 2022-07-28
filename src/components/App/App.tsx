@@ -3,8 +3,9 @@ import Home from 'components/Home/Home';
 import CreateBlog from 'components/Create/CreateBlog';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BlogDetails from 'components/BlogDetails/BlogDetails';
-import GlobalStyles from 'styles/Global/Global';
-import { Nav } from 'styles/Global/Navbar.styled';
+import GlobalStyles from 'styles/Global';
+import BlogList from 'components/BlogList/BlogList';
+
 
 function App() {
   return (

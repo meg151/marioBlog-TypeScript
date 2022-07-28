@@ -2,7 +2,7 @@ import  {useState} from "react";
 import axios from 'axios';
 import { useMutation } from 'react-query';
 import { useHistory } from 'react-router-dom';
-import { CreateStyle } from 'styles/Global/CreateStyle.styled';
+import { CreateStyle } from 'styles/CreateStyle.styled';
 
 
 const CreateBlog = () => {

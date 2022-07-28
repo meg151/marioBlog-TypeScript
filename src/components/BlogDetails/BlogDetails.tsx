@@ -2,18 +2,19 @@ import { useQuery } from 'react-query';
 import fetchBlogById from 'components/utils/fetchBlogById';
 import  {useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { BlogDetail } from 'styles/Global/BlogDetail.styled';
+import { BlogDetail } from 'styles/BlogDetail.styled';
 
 export interface ParamsInterface{
     id: string;
 }
 
 export interface BlogInterface{
-    id: string;
+    id?: string;
     title: string;
     body: string;
     author: string;
     map: any;
+    filter: any;
 }
 
 export interface UseQueryInterface{

@@ -12,7 +12,6 @@ interface FetchBlogsInterface{
 }
 
 
-
 const Home = () => {
     const {data:blogs, error, isError, isLoading}:FetchBlogsInterface= useQuery('blogs', fetchBlogs)
     console.log(blogs);
@@ -26,7 +25,7 @@ const Home = () => {
 
     return (
         <div className="home">
-           {blogs && <BlogList blogs={blogs} title="All Blogs"/>}
+           {blogs && <BlogList blogs={blogs} title="All Blogs"/>} 
         </div>
     )
 }
