@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { BlogInterface } from 'components/BlogDetails/BlogDetails'
-import { BlogPreview } from 'styles/BlogList.styled';
+import { BlogPreview, BlogListStyle } from 'styles/BlogList.styled';
 import { SelectWriter } from 'styles/SelectWriter.styled';
 import { useState } from 'react';
 
@@ -28,7 +28,7 @@ const BlogList = ({blogs, title}:BlogListInterface) => {
     </select>
     </SelectWriter>
     
-        <BlogPreview>
+        <BlogListStyle>
             <h2>{title}</h2>
             {blogs && blogs.map((blog:BlogListInterface) => (
                 <BlogPreview key={blog.id}>
@@ -38,7 +38,7 @@ const BlogList = ({blogs, title}:BlogListInterface) => {
           </Link>
                 </BlogPreview>
             ))}
-        </BlogPreview>
+        </BlogListStyle>
 
         
 </>
