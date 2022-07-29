@@ -27,7 +27,8 @@ const BlogList = ({blogs, title}:BlogListInterface) => {
     <option value="yoshi">yoshi</option>
     </select>
     </SelectWriter>
-    
+
+
         <BlogListStyle>
             <h2>{title}</h2>
             {blogs && blogs.map((blog:BlogListInterface) => (
