@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CreateStyle = styled.div`
+export const StyledCreate = styled.div`
 max-width: 400px;
 margin: 0 auto;
 text-align: center;

@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
 
-export const Nav = styled.nav` 
+export const StyledNavbar = styled.nav` 
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+
     padding: 20px;
     display: flex;
     align-items: center;
-    max-width: 600px;
+    max-widths: 600px;
     margin: 0 auto;
     border-bottom: 1px solid #f2f2f2;
 

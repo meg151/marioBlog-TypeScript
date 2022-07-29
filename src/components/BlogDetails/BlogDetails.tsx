@@ -2,10 +2,10 @@ import { useQuery } from 'react-query';
 import fetchBlogById from 'components/utils/fetchBlogById';
 import  {useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { BlogDetail } from 'styles/BlogDetail.styled';
+import { StyledBlogDetails } from 'styles/StyledBlogDetails.styled';
 
 export interface ParamsInterface{
-    id: string;
+    id: string | number | any;
 }
 
 export interface BlogInterface{
@@ -14,7 +14,6 @@ export interface BlogInterface{
     body: string;
     author: string;
     map: any;
-    filter: any;
 }
 
 export interface UseQueryInterface{
@@ -55,7 +54,7 @@ const BlogDetails = () => {
 
 
         return (
-            <BlogDetail >                    
+            <StyledBlogDetails >                    
                     <article>
                         <h2>{blog?.title}</h2>
                         <p>written by {blog?.author}</p>
@@ -63,11 +62,10 @@ const BlogDetails = () => {
                         <button onClick={deleteHandler}>delete</button>
                         <button onClick={updateHandler}>edit</button>
                     </article>
-            </BlogDetail>
+            </StyledBlogDetails>
         )
     }
-    
-         
+
     
 
 export default BlogDetails

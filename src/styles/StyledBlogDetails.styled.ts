@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BlogDetail = styled.div`
+export const StyledBlogDetails = styled.div`
 h2{
     font-size: 20px;
   color: #f1356d;
@@ -20,5 +20,4 @@ button{
     cursor: pointer;
     margin-left: 10px;
 }
-
-`
+`;

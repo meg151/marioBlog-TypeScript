@@ -1,16 +1,18 @@
-import { Link } from 'react-router-dom';
-import { Nav } from 'styles/Navbar.styled';
+import { BrowserRouter, Link } from 'react-router-dom';
+import { StyledNavbar } from 'styles/StyledNavbar.styled';
 
 
 const Navbar = () => {
   return (
-    <Nav >
+    <BrowserRouter>
+    <StyledNavbar >
       <h1>Mario Blog</h1>
       <div>
         <Link to="/">Home</Link>
         <Link to="/create">New Blog</Link>
       </div>
-    </Nav>
+    </StyledNavbar>
+    </BrowserRouter>
   );
 };
 

@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 import { BlogInterface } from 'components/BlogDetails/BlogDetails'
-import { BlogPreview, BlogListStyle } from 'styles/BlogList.styled';
+import { BlogPreview, BlogListStyle } from 'styles/StyledBlogList.styled';
 import { SelectWriter } from 'styles/SelectWriter.styled';
 import { useState } from 'react';
 
 interface BlogListInterface{
-    blogs:BlogInterface;
+    blogs?:BlogInterface;
     title: string;
     blog: BlogInterface;
     id: string;
@@ -20,15 +20,13 @@ const BlogList = ({blogs, title}:BlogListInterface) => {
 
   
     return (
-        <>
+        <BrowserRouter>
     <SelectWriter>
     <select value={author} onChange={(e) => setAuthor(e.target.value)}>
     <option value="mario">mario</option>
     <option value="yoshi">yoshi</option>
     </select>
     </SelectWriter>
-
-
         <BlogListStyle>
             <h2>{title}</h2>
             {blogs && blogs.map((blog:BlogListInterface) => (
@@ -40,9 +38,7 @@ const BlogList = ({blogs, title}:BlogListInterface) => {
                 </BlogPreview>
             ))}
         </BlogListStyle>
-
-        
-</>
+</BrowserRouter>
     )
 }
 

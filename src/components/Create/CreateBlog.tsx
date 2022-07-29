@@ -2,7 +2,8 @@ import  {useState} from "react";
 import axios from 'axios';
 import { useMutation } from 'react-query';
 import { useHistory } from 'react-router-dom';
-import { CreateStyle } from 'styles/CreateStyle.styled';
+import { StyledCreate } from 'styles/StyledCreate.styled';
+   
 
 
 const CreateBlog = () => {
@@ -35,7 +36,7 @@ const CreateBlog = () => {
 );
 
 return(
-   <CreateStyle>
+   <StyledCreate>
     <h2>Add a New Blog</h2>
     <form 
     onSubmit={(e) => {
@@ -62,7 +63,7 @@ return(
   </select>
   <button>Add Blog</button>
     </form>
-   </CreateStyle>
+   </StyledCreate>
 );
    };
 

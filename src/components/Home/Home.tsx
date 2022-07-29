@@ -4,12 +4,14 @@ import { useQuery } from 'react-query';
 import {BlogInterface} from 'components/BlogDetails/BlogDetails'
 
 interface FetchBlogsInterface{
-    data?: BlogInterface[];
+    data?: BlogInterface;
     // blog?: any;
     error: any;
     isError: any;
     isLoading: any;
 }
+
+
 
 
 const Home = () => {
@@ -25,7 +27,7 @@ const Home = () => {
 
     return (
         <div className="home">
-           {blogs && <BlogList blogs={blogs} title="All Blogs"/>} 
+           {blogs && <BlogList blogs={blogs} title="All Blogs" blog={blogs} id={''} author={''}/>} 
         </div>
     )
 }
