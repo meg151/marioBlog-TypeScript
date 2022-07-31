@@ -1,16 +1,17 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import BlogDetails from 'components/BlogDetails/BlogDetails';
+import BlogDetails, { UseQueryInterface } from 'components/BlogDetails/BlogDetails';
+
 
 export default {
     title: 'BlogDetails',
     component: BlogDetails,
 } as ComponentMeta<typeof BlogDetails>;
 
-const Template: ComponentStory<typeof BlogDetails> = (args) => (
-    <BlogDetails  />
-)
+const Template: ComponentStory<typeof BlogDetails> = (args:any) => <BlogDetails {... args}  />;
 
-export const BlogDetailsStory = Template.bind({});
+export const BlogDetailsStory = Template?.bind({});
+
+
 
 
 

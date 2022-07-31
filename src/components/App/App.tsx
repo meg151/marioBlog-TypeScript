@@ -1,14 +1,14 @@
 import Navbar from 'components/Navbar/Navbar';
 import Home from 'components/Home/Home';
-import CreateBlog from 'components/Create/CreateBlog';
-import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
+import CreateBlog from 'components/BlogCreate/BlogCreate';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BlogDetails from 'components/BlogDetails/BlogDetails';
 import GlobalStyles from 'styles/Global';
 
 
 function App() {
   return (
-    <BrowserRouter>
+<>
     <GlobalStyles />
     <Router>
       <div className="App">
@@ -28,7 +28,7 @@ function App() {
         </div>
       </div>
     </Router>
-    </BrowserRouter>
+    </>
   );
 }
 

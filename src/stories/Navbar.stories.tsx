@@ -10,4 +10,4 @@ const Template: ComponentStory<typeof Navbar> = () => (
     <Navbar />
 )
 
-export const NavbarStory = Template.bind({});
+export const NavbarStory= Template.bind({});
