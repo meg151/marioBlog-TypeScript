@@ -4,8 +4,6 @@ import { useMutation } from 'react-query';
 import { useHistory } from 'react-router-dom';
 import { StyledCreate } from 'styles/StyledCreate.styled';
    
-
-
 const CreateBlog = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');

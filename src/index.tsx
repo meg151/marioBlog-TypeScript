@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { createRoot } from 'react-dom/client';
 import 'index.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -13,11 +13,14 @@ const root = createRoot(rootElement as Element);
 
 
 root.render(
-  <QueryClientProvider client={queryClient}>
+
     <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
       <App />
+    </QueryClientProvider>
     </React.StrictMode>
-  </QueryClientProvider>
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function

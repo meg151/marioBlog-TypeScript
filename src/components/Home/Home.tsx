@@ -27,7 +27,7 @@ const Home = () => {
 
     return (
         <div className="home">
-           {blogs && <BlogList blogs={blogs} title="All Blogs" blog={blogs} id={''} author={''}/>} 
+           {blogs && <BlogList blogs={blogs} title="All Blogs" blog={blogs} id={''} author={''} stories={undefined}/>} 
         </div>
     )
 }

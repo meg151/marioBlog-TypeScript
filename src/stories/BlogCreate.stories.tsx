@@ -10,4 +10,4 @@ const Template: ComponentStory<typeof BlogCreate> = () => (
     <BlogCreate />
 )
 
-export const NavbarStory= Template.bind({});
+export const BlogCreateStory= Template.bind({});

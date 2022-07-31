@@ -23,7 +23,7 @@ a{
 `;
 
 export const BlogListStyle = styled.div`
-padding: 10px 16px;
+ padding: 10px 16px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa; 
   

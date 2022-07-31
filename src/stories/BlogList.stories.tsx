@@ -10,4 +10,10 @@ const Template: ComponentStory<typeof BlogList> = (args) => (
     <BlogList {...args} />
 )
 
-export const BlogListStory = Template.bind({});
+export const BlogListStory = Template?.bind({});
+BlogListStory.args = {
+    stories: {
+        title: 'Stroy',
+        author: 'mario',
+    }
+}

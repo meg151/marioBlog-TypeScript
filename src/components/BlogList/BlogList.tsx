@@ -10,6 +10,7 @@ interface BlogListInterface{
     blog: BlogInterface;
     id: string;
     author: string;
+    stories : any;
 }
 
 
