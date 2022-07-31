@@ -6,13 +6,11 @@ import BlogDetails from 'components/BlogDetails/BlogDetails';
 import GlobalStyles from 'styles/Global';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-const queryClient = new QueryClient()
-
 
 function App() {
   return (
   <>
-    <GlobalStyles />
+     {/* <QueryClientProvider client={queryClient}> */}
     <Router>
       <div className="App">
         <Navbar />
@@ -22,9 +20,7 @@ function App() {
           <Home/>
             </Route>
             <Route path="/create">
-            <QueryClientProvider client={queryClient}>
             <CreateBlog />
-            </QueryClientProvider>
             </Route>
             <Route path="/blogs/:id">
               <BlogDetails />
@@ -33,6 +29,8 @@ function App() {
         </div>
       </div>
     </Router>
+    <GlobalStyles />
+    {/* </QueryClientProvider> */}
     </>
   );
 }

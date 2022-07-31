@@ -1,15 +1,20 @@
 import  {useState} from "react";
 import axios from 'axios';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 import { useHistory } from 'react-router-dom';
 import { StyledCreate } from 'styles/StyledCreate.styled';
-   
-const CreateBlog = () => {
+import { render } from '@testing-library/react';
+
+ 
+const BlogCreate = () => {
+    const queryClient = useQueryClient()
+
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
 
     let history = useHistory();
+
 
     const mutateBlog = useMutation(
         () => 
@@ -29,6 +34,7 @@ const CreateBlog = () => {
             setTitle("");
             setBody("");
             setAuthor("");
+            queryClient.invalidateQueries('BlogCreate')
         }
     }
 );
@@ -65,4 +71,6 @@ return(
 );
    };
 
-export default CreateBlog;
+
+
+   export default BlogCreate;

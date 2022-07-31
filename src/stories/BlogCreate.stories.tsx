@@ -1,6 +1,7 @@
 import {ComponentStory, ComponentMeta } from '@storybook/react';
 import BlogCreate from 'components/BlogCreate/BlogCreate'
 
+
 export default{
     title: 'BlogCreate',
     component : BlogCreate,
